@@ -173,8 +173,10 @@ function MenubarFile( editor ) {
 	option.setTextContent( strings.getKey( 'menubar/file/export/scene' ) );
 	option.onClick( function () {
 
-		var output = editor.scene.toJSON() 
-		output["scripts"] = editor.scripts.toJSON();
+		var output = editor.scene.toJSON()
+		output["scripts"] = null;
+		output.scripts = editor.scripts.toJSON();
+
 
 		try {
 
