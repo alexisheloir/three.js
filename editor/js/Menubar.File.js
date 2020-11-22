@@ -174,6 +174,12 @@ function MenubarFile( editor ) {
 	option.onClick( function () {
 
 		var output = editor.scene.toJSON();
+		var scripts = editor.scripts;
+
+		output["scripts"] = null;
+
+		output.scripts = scripts;
+
 		//testing commit
 
 		try {
