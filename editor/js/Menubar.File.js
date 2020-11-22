@@ -170,12 +170,16 @@ function MenubarFile( editor ) {
 
 	var option = new UIRow();
 	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'menubar/file/export/scene' ) );
+	//option.setTextContent( strings.getKey( 'menubar/file/export/scene' ) );
+	option.setTextContent( "trololo" ) );
+
 	option.onClick( function () {
 
 		var output = editor.scene.toJSON()
 		output["scripts"] = null;
 		output.scripts = editor.scripts;
+		console.log(scripts);
+		console.log(output);
 
 
 		try {
