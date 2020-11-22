@@ -178,9 +178,7 @@ function MenubarFile( editor ) {
 
 		output["scripts"] = null;
 
-		output.scripts = scripts;
-
-		console.log(output);
+		output.scripts = scripts; //appending scripts because I want them to be saved
 
 		//testing commit
 
