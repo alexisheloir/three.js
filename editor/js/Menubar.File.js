@@ -175,7 +175,7 @@ function MenubarFile( editor ) {
 
 		var output = editor.scene.toJSON()
 		output["scripts"] = null;
-		output.scripts = editor.scripts.toJSON();
+		output.scripts = editor.scripts;
 
 
 		try {
