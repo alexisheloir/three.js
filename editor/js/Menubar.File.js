@@ -180,6 +180,8 @@ function MenubarFile( editor ) {
 
 		output.scripts = scripts;
 
+		console.log(output);
+
 		//testing commit
 
 		try {
