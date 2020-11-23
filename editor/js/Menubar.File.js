@@ -173,11 +173,32 @@ function MenubarFile( editor ) {
 	option.setTextContent( strings.getKey( 'menubar/file/export/scene' ) );
 	option.onClick( function () {
 
-		var output = editor.scene.toJSON();
+		var output = new Object();
+		
+		output["metadata"] = null;
+
+		output.metadata = JSON.parse(`
+		{
+			"type": "App"
+		}`);
+
+		output["project"] = null;
+
+		output.project = JSON.parse(`
+		{
+			"shadows": true,
+			"vr": false
+		}`);
+
+
+		output["camera"] = null;
+		output.camera = editor.camera;
+
+		output["scene"] = null;
+		output.scene = editor.scene.toJSON();
 		var scripts = editor.scripts;
 
 		output["scripts"] = null;
-
 		output.scripts = scripts; //appending scripts because I want them to be saved
 
 		//testing commit
