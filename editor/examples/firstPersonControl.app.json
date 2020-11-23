@@ -1,0 +1,116 @@
+{
+	"metadata": {
+		"version": 4.5,
+		"type": "Object",
+		"generator": "Object3D.toJSON"
+	},
+	"geometries": [
+		{
+			"uuid": "2198CCD2-7A79-439C-8842-360A21572606",
+			"type": "BoxBufferGeometry",
+			"width": 1,
+			"height": 1,
+			"depth": 1,
+			"widthSegments": 1,
+			"heightSegments": 1,
+			"depthSegments": 1
+		}],
+	"materials": [
+		{
+			"uuid": "09D2B008-4026-422E-B15E-585F1B0AB67F",
+			"type": "MeshStandardMaterial",
+			"color": 16777215,
+			"roughness": 1,
+			"metalness": 0,
+			"emissive": 0,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680
+		}],
+	"object": {
+		"uuid": "31517222-A9A7-4EAF-B5F6-60751C0BABA3",
+		"type": "Scene",
+		"name": "Scene",
+		"layers": 1,
+		"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+		"children": [
+			{
+				"uuid": "9BCBF6E0-DFC8-4A7D-BB36-CCC0A856FFE9",
+				"type": "Group",
+				"name": "Group",
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"children": [
+					{
+						"uuid": "163F53A2-1906-4E46-AED2-A7B3FBC0238B",
+						"type": "PerspectiveCamera",
+						"name": "PerspectiveCamera",
+						"layers": 1,
+						"matrix": [-1,0,0,0,0,1,0,0,0,0,-1,0,0,0,0,1],
+						"fov": 50,
+						"zoom": 1,
+						"near": 0.1,
+						"far": 2000,
+						"focus": 10,
+						"aspect": 1,
+						"filmGauge": 35,
+						"filmOffset": 0
+					}]
+			},
+			{
+				"uuid": "8717A8E4-1C43-4715-8C13-A237929AA96B",
+				"type": "Mesh",
+				"name": "Box",
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0.493371,0,8.024981,1],
+				"geometry": "2198CCD2-7A79-439C-8842-360A21572606",
+				"material": "09D2B008-4026-422E-B15E-585F1B0AB67F"
+			},
+			{
+				"uuid": "8AB04719-D7B3-4E9E-808B-274752279870",
+				"type": "PointLight",
+				"name": "PointLight",
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,3.408406,-0.241096,1],
+				"color": 16777215,
+				"intensity": 1,
+				"distance": 0,
+				"decay": 1,
+				"shadow": {
+					"camera": {
+						"uuid": "348FDBAD-EF07-4B2A-86CA-E4E4457C7AED",
+						"type": "PerspectiveCamera",
+						"layers": 1,
+						"fov": 90,
+						"zoom": 1,
+						"near": 0.5,
+						"far": 500,
+						"focus": 10,
+						"aspect": 1,
+						"filmGauge": 35,
+						"filmOffset": 0
+					}
+				}
+			}]
+	},
+	"scripts": {
+		"163F53A2-1906-4E46-AED2-A7B3FBC0238B": [
+			{
+				"name": "BecomeMainCamera",
+				"source": "player.setCamera(this);\nfunction update( event ) {}"
+			}],
+		"9BCBF6E0-DFC8-4A7D-BB36-CCC0A856FFE9": [
+			{
+				"name": "firstPerson",
+				"source": "this.object = this;\n// API\n\nthis.enabled = true;\n\nthis.movementSpeed = 1.0;\nthis.lookSpeed = 0.005;\n\nthis.lookVertical = true;\nthis.autoForward = false;\n\nthis.activeLook = true;\n\nthis.heightSpeed = false;\nthis.heightCoef = 1.0;\nthis.heightMin = 0.0;\nthis.heightMax = 1.0;\n\nthis.constrainVertical = false;\nthis.verticalMin = 0;\nthis.verticalMax = Math.PI;\n\nthis.mouseDragOn = false;\n\n// internals\n\nthis.autoSpeedFactor = 0.0;\n\nthis.mouseX = 0;\nthis.mouseY = 0;\n\nthis.moveForward = false;\nthis.moveBackward = false;\nthis.moveLeft = false;\nthis.moveRight = false;\n\nthis.viewHalfX = 0;\nthis.viewHalfY = 0;\n\n// private variables\n\nvar lat = 0;\nvar lon = 0;\n\nvar lookDirection = new THREE.Vector3();\nvar spherical = new THREE.Spherical();\nvar target = new THREE.Vector3();\n\nfunction mousemove( event ) {\n\t\n\tthis.mouseX = ( (event.clientX-(player.width  / 2.0)) / (player.width  / 2.0 ));\n\t\n\tthis.mouseY = ( (event.clientY-(player.height / 2.0)) / (player.height / 2.0 ));\n\t\t\t\t  \n\t//console.log(this.mouseX)\n\t\n}\n\nfunction onMouseDown( event ) {\n\n\t//colsole.log(\"mouseDown\")\n\tevent.preventDefault();\n\tevent.stopPropagation();\n\n\tif ( this.activeLook ) {\n\n\t\tswitch ( event.button ) {\n\n\t\t\tcase 0: this.moveForward = true; break;\n\t\t\tcase 2: this.moveBackward = true; break;\n\n\t\t}\n\n\t}\n\n\tthis.mouseDragOn = true;\n\n}\n\nfunction onMouseUp( event ) {\n\n\tevent.preventDefault();\n\tevent.stopPropagation();\n\n\tif ( this.activeLook ) {\n\n\t\tswitch ( event.button ) {\n\n\t\t\tcase 0: this.moveForward = false; break;\n\t\t\tcase 2: this.moveBackward = false; break;\n\t\t}\n\n\t}\n\n\tthis.mouseDragOn = false;\n\n}\n\nfunction keydown( event ) {\n\n\t//event.preventDefault();\n\tconsole.log(\"Keydown\")\n\tswitch ( event.keyCode ) {\n\n\t\tcase 38: /*up*/\n\t\tcase 87: /*W*/ this.moveForward = true; break;\n\n\t\tcase 37: /*left*/\n\t\tcase 65: /*A*/ this.moveLeft = true; break;\n\n\t\tcase 40: /*down*/\n\t\tcase 83: /*S*/ this.moveBackward = true; break;\n\n\t\tcase 39: /*right*/\n\t\tcase 68: /*D*/ this.moveRight = true; break;\n\n\t\tcase 82: /*R*/ this.moveUp = true; break;\n\t\tcase 70: /*F*/ this.moveDown = true; break;\n\n\t\t}\n\n}\n\n//se https://github.com/mrdoob/three.js/blob/2cb40fa07930335e6820a275b6cecd58888c4b2d/editor/js/libs/app.js#L166\nfunction keyup( event ) {\n\n\tswitch ( event.keyCode ) {\n\n\t\tcase 38: /*up*/\n\t\tcase 87: /*W*/ this.moveForward = false; break;\n\n\t\tcase 37: /*left*/\n\t\tcase 65: /*A*/ this.moveLeft = false; break;\n\n\t\tcase 40: /*down*/\n\t\tcase 83: /*S*/ this.moveBackward = false; break;\n\n\t\tcase 39: /*right*/\n\t\tcase 68: /*D*/ this.moveRight = false; break;\n\n\t\tcase 82: /*R*/ this.moveUp = false; break;\n\t\tcase 70: /*F*/ this.moveDown = false; break;\n\n\t}\n\n}\n\n/**this.lookAt = function ( x, y, z ) {\n\n\tif ( x.isVector3 ) {\n\n\t\ttarget.copy( x );\n\n\t} else {\n\n\t\ttarget.set( x, y, z );\n\n\t}\n\n\tthis.object.lookAt( target );\n\n\tsetOrientation( this );\n\n\treturn this;\n\n};*/\n\nfunction update( delta ) {\n\n\tdelta = 0.001;\n     \n\tvar targetPosition = new THREE.Vector3();\n\n\n\tif ( this.enabled === false ) return;\n\n\tif ( this.heightSpeed ) {\n\n\t\tvar y = THREE.MathUtils.clamp( this.object.position.y, this.heightMin, this.heightMax );\n\t\tvar heightDelta = y - this.heightMin;\n\n\t\tthis.autoSpeedFactor = delta * ( heightDelta * this.heightCoef );\n\n\t} else {\n\n\t\tthis.autoSpeedFactor = 0.0;\n\n\t}\n\n\tvar actualMoveSpeed = delta * this.movementSpeed;\n\n\tif ( this.moveForward || ( this.autoForward && ! this.moveBackward ) ) this.object.translateZ( - ( actualMoveSpeed + this.autoSpeedFactor ) );\n\tif ( this.moveBackward ) this.object.translateZ( actualMoveSpeed );\n\n\tif ( this.moveLeft ) this.object.translateX( actualMoveSpeed );\n\tif ( this.moveRight ) this.translateX( actualMoveSpeed );\n\tif ( this.moveUp ) this.object.translateY( actualMoveSpeed );\n\tif ( this.moveDown ) this.object.translateY( - actualMoveSpeed );\n\n\t//this.translateZ(0.001)\n\t\n\tvar actualLookSpeed = delta * this.lookSpeed;\n\n\tif ( ! this.activeLook ) {\n\n\t\tactualLookSpeed = 0.0;\n\n\t}\n\t\n\tvar verticalLookRatio = 1;\n\n\tif ( this.constrainVertical ) {\n\t\tverticalLookRatio = Math.PI / ( this.verticalMax - this.verticalMin );\n\t}\n\n\tlon += this.mouseX * actualLookSpeed;\n\tif ( this.lookVertical )  lat += this.mouseY * actualLookSpeed * verticalLookRatio;\n\n\tlat = Math.max( - 85, Math.min( 85, lat ) );\n\t//lon = Math.max( - 85, Math.min( 85, lon ) );\t\n\n\tvar phi = THREE.MathUtils.degToRad( lat );\n\tvar theta = THREE.MathUtils.degToRad( lon );\n\tif ( this.constrainVertical ) {\n\t\tphi = THREE.MathUtils.mapLinear( phi, 0, Math.PI, this.verticalMin, this.verticalMax );\n\t}\n\n\tvar position = this.position;\n\n\ttargetPosition.setFromSphericalCoords( 1, Math.PI/2 + lat  , - lon ).add( position );\n    console.log(new THREE.Vector3().setFromSphericalCoords( 1, Math.PI/2, 0 ))\n\tthis.lookAt( targetPosition );\n\t//this.lookAt( new THREE.Vector3(1,0,0).add(position) );\n\t\n\t\n\t\n}\n"
+			}]
+	}
+}

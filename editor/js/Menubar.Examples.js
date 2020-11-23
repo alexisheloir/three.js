@@ -26,6 +26,7 @@ function MenubarExamples( editor ) {
 		{ title: 'menubar/examples/Particles', file: 'particles.app.json' },
 		{ title: 'menubar/examples/Pong', file: 'pong.app.json' },
 		{ title: 'menubar/examples/Shaders', file: 'shaders.app.json' }
+		{ title: 'menubar/examples/FirstPersonControl', file: 'firstPersonControl.app.json' }
 	];
 
 	var loader = new THREE.FileLoader();
