@@ -35,6 +35,7 @@ function MenubarExamples( editor ) {
 		{ title: 'JohanaOuanely', file: '00JohanaOuanely.json' },
 		{ title: 'ManonDalle', file: '00ManonDalle.json' },
 		{ title: 'MohamadouKonate', file: '00MohamadouKonate.json' },
+		{ title: 'ReinaDagher-LucFigliolini', file: '00ReinaDagher-LucFigliolini.json' },				
 		{ title: 'menubar/examples/Arkanoid', file: 'arkanoid.app.json' },
 		{ title: 'menubar/examples/Camera', file: 'camera.app.json' },
 		{ title: 'menubar/examples/Particles', file: 'particles.app.json' },
