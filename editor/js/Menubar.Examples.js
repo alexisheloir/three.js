@@ -11,7 +11,12 @@ function MenubarExamples( editor ) {
 
 	var title = new UIPanel();
 	title.setClass( 'title' );
-	title.setTextContent( strings.getKey( 'menubar/examples' ) );
+	var theTitle = strings.getKey( 'menubar/examples' );
+	if (theTitle == '???') {
+		title.setTextContent( 'menubar/examples' );
+	}else{
+		title.setTextContent( strings.getKey( 'menubar/examples' ) );
+	}
 	container.add( title );
 
 	var options = new UIPanel();
@@ -21,6 +26,15 @@ function MenubarExamples( editor ) {
 	// Examples
 
 	var items = [
+		{ title: 'AndreaGuerbeau-AdrienLenne', file: '00AndreaGuerbeau-AdrienLenne.json' },
+		{ title: 'CheikBambaBeke', file: '00CheikBambaBeke.json' },
+		{ title: 'ClementPauvret', file: '00ClementPauvret.json' },
+		{ title: 'DjamelEddineYatoui', file: '00DjamelEddineYatoui.json' },
+		{ title: 'EsraYildirim', file: '00EsraYildirim.json' },
+		{ title: 'HermineKoco', file: '00HermineKoco.json' },
+		{ title: 'JohanaOuanely', file: '00JohanaOuanely.json' },
+		{ title: 'ManonDalle', file: '00ManonDalle.json' },
+		{ title: 'MohamadouKonate', file: '00MohamadouKonate.json' },
 		{ title: 'menubar/examples/Arkanoid', file: 'arkanoid.app.json' },
 		{ title: 'menubar/examples/Camera', file: 'camera.app.json' },
 		{ title: 'menubar/examples/Particles', file: 'particles.app.json' },
@@ -39,7 +53,14 @@ function MenubarExamples( editor ) {
 
 			var option = new UIRow();
 			option.setClass( 'option' );
-			option.setTextContent( strings.getKey( item.title ) );
+
+			var theOptionTitle = strings.getKey( item.title );
+			if (theOptionTitle == '???') {
+				option.setTextContent( item.title );
+			}else{
+				option.setTextContent( strings.getKey( item.title ) );
+			}
+			//option.setTextContent( strings.getKey( item.title ) );
 			option.onClick( function () {
 
 				if ( confirm( 'Any unsaved data will be lost. Are you sure?' ) ) {
