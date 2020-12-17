@@ -656,13 +656,45 @@ Editor.prototype = {
 		this.signals.cameraResetted.dispatch();
 
 		this.history.fromJSON( json.history );
-		this.scripts = json.scripts;
 
 		loader.parse( json.scene, function ( scene ) {
 
 			scope.setScene( scene );
 
 		} );
+
+		this.animations = json.animations;
+
+		//var clip = editor.animations[ Object.keys(editor.animations)[0] ][0];
+
+		for (let animation of Object.values(editor.animations)){
+			for (let clip of Object.values(animation)){
+						//var track = clip.tracks[0]
+				for (let track of Object.values(clip.tracks)){
+					track.getValueSize = function getValueSizeFactory() {
+						// A CUBICSPLINE keyframe in glTF has three output values for each input value,
+						// representing inTangent, splineVertex, and outTangent. As a result, track.getValueSize()
+						// must be divided by three to get the interpolant's sampleSize argument.
+						
+						return (Object.keys(this.values).length / Object.keys(this.times).length);
+						
+					}
+					
+					track.createInterpolant = function InterpolantFactoryMethodGLTFCubicSpline( result ) {
+						// A CUBICSPLINE keyframe in glTF has three output values for each input value,
+						// representing inTangent, splineVertex, and outTangent. As a result, track.getValueSize()
+						// must be divided by three to get the interpolant's sampleSize argument.
+						return new THREE.CubicInterpolant( Object.values(this.times), Object.values(this.values), this.getValueSize(), result );
+					}
+				}
+			}
+
+		}
+
+
+
+		this.scripts = json.scripts;
+
 
 	},
 

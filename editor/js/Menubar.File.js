@@ -196,12 +196,15 @@ function MenubarFile( editor ) {
 
 		output["scene"] = null;
 		output.scene = editor.scene.toJSON();
+
 		var scripts = editor.scripts;
 
 		output["scripts"] = null;
 		output.scripts = scripts; //appending scripts because I want them to be saved
 
-		//testing commit
+		var animations = editor.animations;
+		output["animations"] = null;
+		output.animations = animations;
 
 		try {
 

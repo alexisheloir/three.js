@@ -1,0 +1,237 @@
+{
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"shadows": true,
+		"vr": false
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "4C887479-9A3A-4F83-B3FD-B1035BD8ADAE",
+			"type": "PerspectiveCamera",
+			"name": "Camera",
+			"layers": 1,
+			"matrix": [-0.201156,0,0.979559,0,0.648841,0.749167,0.133242,0,-0.733854,0.662381,-0.150699,0,-18.08312,16.321915,-3.713427,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.01,
+			"far": 1000,
+			"focus": 10,
+			"aspect": 0.971053,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"geometries": [
+			{
+				"uuid": "5E026751-0A4D-4292-9FC8-D9D3F4B3CEBB",
+				"type": "PlaneBufferGeometry",
+				"width": 1,
+				"height": 1,
+				"widthSegments": 1,
+				"heightSegments": 1
+			},
+			{
+				"uuid": "CF578B80-AB29-4D49-8297-6B482CE77297",
+				"type": "BoxBufferGeometry",
+				"width": 1,
+				"height": 1,
+				"depth": 1,
+				"widthSegments": 1,
+				"heightSegments": 1,
+				"depthSegments": 1
+			},
+			{
+				"uuid": "87D66277-8B2B-415C-9908-4F47E7F79FEF",
+				"type": "SphereBufferGeometry",
+				"radius": 1,
+				"widthSegments": 8,
+				"heightSegments": 6,
+				"phiStart": 0,
+				"phiLength": 6.283185,
+				"thetaStart": 0,
+				"thetaLength": 3.141593
+			}],
+		"materials": [
+			{
+				"uuid": "6B95E7DD-8144-4727-ABEF-D12CAF363E5C",
+				"type": "MeshStandardMaterial",
+				"color": 16777215,
+				"roughness": 1,
+				"metalness": 0,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680
+			},
+			{
+				"uuid": "E780BDD5-CCE5-4A59-A440-A9DED482EBED",
+				"type": "MeshStandardMaterial",
+				"name": "saumon",
+				"color": 14231068,
+				"roughness": 1,
+				"metalness": 0,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680
+			},
+			{
+				"uuid": "7CF41096-623A-4948-9908-82F3DEA6B2D4",
+				"type": "MeshStandardMaterial",
+				"color": 2608707,
+				"roughness": 1,
+				"metalness": 0,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680
+			}],
+		"object": {
+			"uuid": "118EAD3F-FAD4-41B8-A66D-2D54C38E7D8E",
+			"type": "Scene",
+			"name": "Scene",
+			"layers": 1,
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "37E4E76C-5A13-489D-BD6D-D70F6EC31725",
+					"type": "Mesh",
+					"name": "Plane",
+					"receiveShadow": true,
+					"layers": 1,
+					"matrix": [13.341682,0,0,0,0,0,-31.568667,0,0,1,0,0,0,0,0,1],
+					"geometry": "5E026751-0A4D-4292-9FC8-D9D3F4B3CEBB",
+					"material": "6B95E7DD-8144-4727-ABEF-D12CAF363E5C"
+				},
+				{
+					"uuid": "58BE2242-6A67-4061-8410-3B211482C44A",
+					"type": "Mesh",
+					"name": "Box",
+					"castShadow": true,
+					"userData": {
+						"collide": "True"
+					},
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,-0.624417,0.466328,4.848186,1],
+					"geometry": "CF578B80-AB29-4D49-8297-6B482CE77297",
+					"material": "E780BDD5-CCE5-4A59-A440-A9DED482EBED"
+				},
+				{
+					"uuid": "5D03E5D6-41CA-4671-9303-976D800157DC",
+					"type": "PointLight",
+					"name": "PointLight",
+					"castShadow": true,
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,-5.709904,5.857417,-4.571594,1],
+					"color": 16777215,
+					"intensity": 1,
+					"distance": 0,
+					"decay": 1,
+					"shadow": {
+						"camera": {
+							"uuid": "0455B233-DBFE-4081-934D-993B589CC996",
+							"type": "PerspectiveCamera",
+							"layers": 1,
+							"fov": 90,
+							"zoom": 1,
+							"near": 0.5,
+							"far": 500,
+							"focus": 10,
+							"aspect": 1,
+							"filmGauge": 35,
+							"filmOffset": 0
+						}
+					}
+				},
+				{
+					"uuid": "77A7B8CC-4A8F-4B38-B471-8E6E95A1089C",
+					"type": "Group",
+					"name": "CameraControl",
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0.553136,0,1],
+					"children": [
+						{
+							"uuid": "595B515E-48CB-4C66-BDFC-F44636EC8E3B",
+							"type": "PerspectiveCamera",
+							"name": "PerspectiveCamera",
+							"layers": 1,
+							"matrix": [-1,0,0,0,0,1,0,0,0,0,-1,0,0,0,0,1],
+							"fov": 50,
+							"zoom": 1,
+							"near": 0.1,
+							"far": 2000,
+							"focus": 10,
+							"aspect": 1,
+							"filmGauge": 35,
+							"filmOffset": 0
+						}]
+				},
+				{
+					"uuid": "BA0388FA-03D4-442F-88FE-03D1E51CF48D",
+					"type": "Mesh",
+					"name": "Sphere",
+					"userData": {
+						"collide": "True"
+					},
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,3.238294,0.390639,2.391456,1],
+					"geometry": "87D66277-8B2B-415C-9908-4F47E7F79FEF",
+					"material": "7CF41096-623A-4948-9908-82F3DEA6B2D4"
+				}]
+		}
+	},
+	"scripts": {
+		"595B515E-48CB-4C66-BDFC-F44636EC8E3B": [
+			{
+				"name": "become main",
+				"source": "player.setCamera(this);\n"
+			}],
+		"77A7B8CC-4A8F-4B38-B471-8E6E95A1089C": [
+			{
+				"name": "firstPersonControl",
+				"source": "this.object = this;\n// API\n\nthis.enabled = true;\n\nthis.movementSpeed = 1.0;\nthis.lookSpeed = 0.005;\n\nthis.lookVertical = true;\nthis.autoForward = false;\n\nthis.activeLook = true;\n\nthis.heightSpeed = false;\nthis.heightCoef = 1.0;\nthis.heightMin = 0.0;\nthis.heightMax = 1.0;\n\nthis.constrainVertical = false;\nthis.verticalMin = 0;\nthis.verticalMax = Math.PI;\n\nthis.mouseDragOn = false;\n\n// internals\n\nthis.autoSpeedFactor = 0.0;\n\nthis.mouseX = 0;\nthis.mouseY = 0;\n\nthis.moveForward = false;\nthis.moveBackward = false;\nthis.moveLeft = false;\nthis.moveRight = false;\n\nthis.viewHalfX = 0;\nthis.viewHalfY = 0;\n\n// private variables\n\nvar lat = 0;\nvar lon = 0;\n\nvar lookDirection = new THREE.Vector3();\nvar spherical = new THREE.Spherical();\nvar target = new THREE.Vector3();\n\nfunction mousemove( event ) {\n\t\n\tthis.mouseX = ( (event.clientX-(player.width  / 2.0)) / (player.width  / 2.0 ));\n\t\n\tthis.mouseY = ( (event.clientY-(player.height / 2.0)) / (player.height / 2.0 ));\n\t\t\t\t  \n\t//console.log(this.mouseX)\n\t\n}\n\nfunction onMouseDown( event ) {\n\n\t//colsole.log(\"mouseDown\")\n\tevent.preventDefault();\n\tevent.stopPropagation();\n\n\tif ( this.activeLook ) {\n\n\t\tswitch ( event.button ) {\n\n\t\t\tcase 0: this.moveForward = true; break;\n\t\t\tcase 2: this.moveBackward = true; break;\n\n\t\t}\n\n\t}\n\n\tthis.mouseDragOn = true;\n\n}\n\nfunction onMouseUp( event ) {\n\n\tevent.preventDefault();\n\tevent.stopPropagation();\n\n\tif ( this.activeLook ) {\n\n\t\tswitch ( event.button ) {\n\n\t\t\tcase 0: this.moveForward = false; break;\n\t\t\tcase 2: this.moveBackward = false; break;\n\t\t}\n\n\t}\n\n\tthis.mouseDragOn = false;\n\n}\n\nfunction keydown( event ) {\n\n\t//event.preventDefault();\n\tconsole.log(\"Keydown\")\n\tswitch ( event.keyCode ) {\n\n\t\tcase 38: /*up*/\n\t\tcase 87: /*W*/ this.moveForward = true; break;\n\n\t\tcase 37: /*left*/\n\t\tcase 65: /*A*/ this.moveLeft = true; break;\n\n\t\tcase 40: /*down*/\n\t\tcase 83: /*S*/ this.moveBackward = true; break;\n\n\t\tcase 39: /*right*/\n\t\tcase 68: /*D*/ this.moveRight = true; break;\n\n\t\tcase 82: /*R*/ this.moveUp = true; break;\n\t\tcase 70: /*F*/ this.moveDown = true; break;\n\n\t\t}\n\n}\n\n//se https://github.com/mrdoob/three.js/blob/2cb40fa07930335e6820a275b6cecd58888c4b2d/editor/js/libs/app.js#L166\nfunction keyup( event ) {\n\n\tswitch ( event.keyCode ) {\n\n\t\tcase 38: /*up*/\n\t\tcase 87: /*W*/ this.moveForward = false; break;\n\n\t\tcase 37: /*left*/\n\t\tcase 65: /*A*/ this.moveLeft = false; break;\n\n\t\tcase 40: /*down*/\n\t\tcase 83: /*S*/ this.moveBackward = false; break;\n\n\t\tcase 39: /*right*/\n\t\tcase 68: /*D*/ this.moveRight = false; break;\n\n\t\tcase 82: /*R*/ this.moveUp = false; break;\n\t\tcase 70: /*F*/ this.moveDown = false; break;\n\n\t}\n\n}\n\n/**this.lookAt = function ( x, y, z ) {\n\n\tif ( x.isVector3 ) {\n\n\t\ttarget.copy( x );\n\n\t} else {\n\n\t\ttarget.set( x, y, z );\n\n\t}\n\n\tthis.object.lookAt( target );\n\n\tsetOrientation( this );\n\n\treturn this;\n\n};*/\n\nfunction update( event ) {\n\n\tdelta = event.delta * 0.001;\n     \n\tvar targetPosition = new THREE.Vector3();\n\n\n\tif ( this.enabled === false ) return;\n\n\tif ( this.heightSpeed ) {\n\n\t\tvar y = THREE.MathUtils.clamp( this.object.position.y, this.heightMin, this.heightMax );\n\t\tvar heightDelta = y - this.heightMin;\n\n\t\tthis.autoSpeedFactor = delta * ( heightDelta * this.heightCoef );\n\n\t} else {\n\n\t\tthis.autoSpeedFactor = 0.0;\n\n\t}\n\n\tvar actualMoveSpeed = delta * this.movementSpeed;\n\n\tif ( this.moveForward || ( this.autoForward && ! this.moveBackward ) ) this.object.translateZ( + ( actualMoveSpeed + this.autoSpeedFactor ) );\n\tif ( this.moveBackward ) this.object.translateZ( - actualMoveSpeed );\n\n\tif ( this.moveLeft ) this.object.translateX(  actualMoveSpeed );\n\tif ( this.moveRight ) this.translateX( - actualMoveSpeed );\n\tif ( this.moveUp ) this.object.translateY(  actualMoveSpeed );\n\tif ( this.moveDown ) this.object.translateY( -  actualMoveSpeed );\n\n\t//this.translateZ(0.001)\n\t\n\tvar actualLookSpeed = delta * this.lookSpeed;\n\n\tif ( ! this.activeLook ) {\n\n\t\tactualLookSpeed = 0.0;\n\n\t}\n\n\tactualLookSpeed = 0.005;\n\n\t\n\tvar verticalLookRatio = 1;\n\n\tif ( this.constrainVertical ) {\n\t\tverticalLookRatio = Math.PI / ( this.verticalMax - this.verticalMin );\n\t}\n\n\tlon += this.mouseX * actualLookSpeed;\n\tif ( this.lookVertical )  lat += this.mouseY * actualLookSpeed * verticalLookRatio;\n\n\tlat = Math.max( - 85, Math.min( 85, lat ) );\n\t//lon = Math.max( - 85, Math.min( 85, lon ) );\t\n\n\tvar phi = THREE.MathUtils.degToRad( lat );\n\tvar theta = THREE.MathUtils.degToRad( lon );\n\tif ( this.constrainVertical ) {\n\t\tphi = THREE.MathUtils.mapLinear( phi, 0, Math.PI, this.verticalMin, this.verticalMax );\n\t}\n\n\tvar position = this.position;\n\n\ttargetPosition.setFromSphericalCoords( 1, Math.PI/2 + lat  , - lon ).add( position );\n\tthis.lookAt( targetPosition );\n\t\n\t\n\t\n}\n"
+			}],
+		"118EAD3F-FAD4-41B8-A66D-2D54C38E7D8E": [
+			{
+				"name": "detectionCollisions",
+				"source": "function update( event ) {\n\t\n\t// récupérer la caméra\n\tcamera = this.getObjectByName(\"CameraControl\");\n\t\n\t// récupérer le plan\n\tplane = this.getObjectByName(\"Plane\");\n\t\n\t// récupérer la lumière\n\tvar light = this.getObjectByName(\"PointLight\");\n\t\n\t//console.log(this.children)\n\tfor (var childKey in this.children)\n\t{\n\t\t\n\t\t//console.log(child.userData[\"collide\"]);\n\t\t//pour chaque noeud enfant du graphe de scene, \n\t\tchild = this.children[childKey];\n\t\t\n\t\t//on regarde si ce noued a l'attribut \"collide\" pour valeur True\n\t\tif (child.userData[\"collide\"])\n\t\t{\n\t\t\t//si c'est le cas et que le caméra est suffisament proche\n\t\t\tif (camera.position.distanceTo(child.position) < 1.1 )\n\t\t\t{\n\t\t\t\t// on affichie \"touché dans la console\" et on change la couleurdu materiau de l objet\n\t\t\t\tconsole.log(\"touché!\");\n\t\t\t\tchild.material = new THREE.MeshStandardMaterial( { color: Math.random() * 0xffffff } );\n\t\t\t\tlight.intensity = 0.0;\n\t\t\t}else\n\t\t\t{\n\t\t\t\t//light.intensity = 1.0;\n\t\t\t}\n\t\t}\n\t}\n\n}"
+			}]
+	}
+}
