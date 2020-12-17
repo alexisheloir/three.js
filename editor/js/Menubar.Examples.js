@@ -42,7 +42,7 @@ function MenubarExamples( editor ) {
 		{ title: 'menubar/examples/Pong', file: 'pong.app.json' },
 		{ title: 'menubar/examples/Shaders', file: 'shaders.app.json' },
 		{ title: 'menubar/examples/FirstPersonControl', file: 'firstPersonControl.app.json' },
-		{ title: 'menubar/examples/Collision', file: 'collision.json' },
+		{ title: 'Collision Example', file: 'collision.json' },
 		{ title: 'Animation Example', file: 'animationExample.json' }
 	];
 
