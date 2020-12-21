@@ -203,8 +203,10 @@ function MenubarFile( editor ) {
 		output.scripts = scripts; //appending scripts because I want them to be saved
 
 		var animations = editor.animations;
-		output["animations"] = null;
-		output.animations = animations;
+		if (Object.keys(animations).length > 0) {
+			output["animations"] = null;
+			output.animations = animations;
+		}
 
 		try {
 
