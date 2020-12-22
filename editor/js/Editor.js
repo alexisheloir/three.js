@@ -665,7 +665,7 @@ Editor.prototype = {
 
 		this.animations = json.animations;
 
-		if (typeof(editor.animatins) == "undefined") this.animations={};
+		if (typeof(editor.animations) == "undefined") this.animations={};
 
 		if (Object.keys(this.animations).length > 0) { 
 			//var clip = editor.animations[ Object.keys(editor.animations)[0] ][0];
